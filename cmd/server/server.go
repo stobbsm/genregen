@@ -10,6 +10,7 @@ import (
 
 // Start an http server to generate a unique
 // genre type.
+// © Matthew Stobbs, 2022
 
 func main() {
 	http.HandleFunc("/", WordsHandler)

@@ -8,6 +8,7 @@ import (
 )
 
 // List of phrases that can be joined
+// © Matthew Stobbs, 2022
 
 var words = []string{
 	"Action", "Romance", "Adventure", "Mystery",

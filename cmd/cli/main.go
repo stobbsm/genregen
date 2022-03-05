@@ -1,5 +1,8 @@
 package main
 
+// CLI application for generating book genre's.
+// © Matthew Stobbs, 2022
+
 import (
 	"fmt"
 	"strings"
