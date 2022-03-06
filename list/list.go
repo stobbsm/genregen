@@ -1,6 +1,7 @@
-package genregen
+package list
 
 import (
+	_ "embed"
 	"errors"
 	"math/rand"
 	"strings"
@@ -10,24 +11,10 @@ import (
 // List of phrases that can be joined
 // © Matthew Stobbs, 2022
 
-var words = []string{
-	"Action", "Romance", "Adventure", "Mystery",
-	"Fantasy", "SciFi", "Dystopian", "Horror",
-	"Thriller", "LGBTQ+", "Historical Fiction", "Paranormal",
-	"Memoir", "Folktale", "Humor", "Comic/Graphic",
-	"Magical Realism", "Drama", "Fairytale", "Legend",
-	"Mythology", "Dark Fantasy", "Espionage", "Vampires",
-	"Werewolf", "Witch", "Fairy", "Faey",
-	"Wizard", "Academia", "Time Travel", "Portal Magic",
-	"Space Travel", "Fantastical Creatures", "Tragedy", "Sports",
-	"Comedy", "War", "Steampunk", "Parallel Worlds",
-	"Alternate History", "Contemporary/Real World", "Detective", "Coming of Age",
-	"Urban", "Monsters", "Robots", "Dragons",
-	"Bounty Hunter", "Pirate", "Gothic", "Cozy",
-	"Culinary", "Generational Ship", "Immortality", "Lost Worlds",
-	"Mind Transfer", "Locked Room", "Holiday", "Inspirational",
-	"Biopunk",
-}
+//go:embed builtin.list
+var dw []byte
+
+var words = parse(dw)
 
 // GetRandom returns a random word from the word list
 func GetRandom() string {

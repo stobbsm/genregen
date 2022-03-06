@@ -7,11 +7,11 @@ import (
 	"fmt"
 	"strings"
 
-	words "github.com/stobbsm/genregen"
+	"github.com/stobbsm/genregen/list"
 )
 
 func main() {
-	wordList, err := words.GetRandomN(2)
+	wordList, err := list.GetRandomN(2)
 	if err != nil {
 		panic(err)
 	}
