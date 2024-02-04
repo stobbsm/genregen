@@ -1,0 +1,17 @@
+root = "."
+tmp_dir = "tmp"
+
+[build]
+cmd = "make dev"
+bin = "tmp/genregen"
+full_bin = "APP_ENV=dev ./tmp/genregen"
+include_ext = ["go", "vue", "js", "css"]
+exclude_dir = ["bin", "tmp", "vue/node_modules", "vue/dist"]
+include_dir = ["./", "list", "vue"]
+exclude_regex = ["_test.go"]
+delay = 1000
+stop_on_error = false
+log = "air.log"
+
+[misc]
+clean_on_exit = true
